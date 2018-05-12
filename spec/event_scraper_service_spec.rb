@@ -7,7 +7,17 @@ describe EventScraperService do
       expect(event_scraper_service_object.events).to be_instance_of Array
     end
 
+    it "should have a scrape method" do
+      event_scraper_service_object = EventScraperService.new
+      expect(event_scraper_service_object.scrape).to be_truthy
+    end
+  end
 
+  context "when using the scrape method" do
+    it "should return an array" do
+      event_scraper_service_object = EventScraperService.new
+      expect(event_scraper_service_object.scrape).to be_instance_of Array
+    end
   end
 
   context "when accessing event data in EventScraperService class" do
