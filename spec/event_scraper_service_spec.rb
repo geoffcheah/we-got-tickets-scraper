@@ -42,11 +42,11 @@ describe EventScraperService do
       expect(random_event_hash.has_key?(:name)).to be true
     end
 
-    it "should have a artist" do
+    it "should have venue_details" do
       event_scraper_service_object = EventScraperService.new
       events = event_scraper_service_object.events
       random_event_hash = events.sample
-      expect(random_event_hash.has_key?(:artist)).to be true
+      expect(random_event_hash.has_key?(:venue_details)).to be true
     end
 
     it "should have a city" do

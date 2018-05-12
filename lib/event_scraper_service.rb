@@ -44,7 +44,4 @@ class EventScraperService
   end
 end
 
-scraper_service_object = EventScraperService.new
-events = scraper_service_object.scrape
-
 
