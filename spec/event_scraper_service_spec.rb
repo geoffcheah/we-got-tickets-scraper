@@ -30,7 +30,7 @@ describe EventScraperService do
       event_scraper_service_object = EventScraperService.new
       events = event_scraper_service_object.events
       random_event_hash = events.sample
-      expect(random_event_hash.keys.count).to eq 6
+      expect(random_event_hash.keys.count).to eq 3
     end
   end
 
