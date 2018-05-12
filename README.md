@@ -1,5 +1,7 @@
 Set up and running the scraper.
 
+ruby version 2.4.3 (please make sure to have that installed)
+
 Gems etc.
 Please make sure to install the following gems:
   nokogiri
