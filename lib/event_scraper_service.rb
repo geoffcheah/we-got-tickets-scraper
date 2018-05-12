@@ -19,7 +19,7 @@ class EventScraperService
         price: get_price(element)
       }
     end
-    return @events
+    @events
   end
 
   def get_name(element)
