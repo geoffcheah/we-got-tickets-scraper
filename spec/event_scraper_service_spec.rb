@@ -1,11 +1,77 @@
 require_relative "../lib/event_scraper_service.rb"
 
 describe EventScraperService do
-  context "when using the EventScraper class" do
+  context "when using the EventScraperService class" do
     it "should have an events method that returns an events array containing ticket data" do
-      event_scraper = EventScraperService.new
-      expect(event_scraper.events).to be_instance_of Array
+      event_scraper_service_object = EventScraperService.new
+      expect(event_scraper_service_object.events).to be_instance_of Array
+    end
 
+
+  end
+
+  context "when accessing event data in EventScraperService class" do
+    it "the events array should contain hashes" do
+      event_scraper_service_object = EventScraperService.new
+      expect(event_scraper_service_object.events.sample).to be_instance_of Hash
+    end
+
+    it "the event hash should have 6 keys" do
+      event_scraper_service_object = EventScraperService.new
+      events = event_scraper_service_object.events
+      random_event_hash = events.sample
+      expect(random_event_hash.keys.count).to eq 6
+    end
+  end
+
+  context "when looking at the keys and values in event hash" do
+    it "should have a name" do
+      event_scraper_service_object = EventScraperService.new
+      events = event_scraper_service_object.events
+      random_event_hash = events.sample
+      expect(random_event_hash.has_key?(:name)).to be true
+    end
+
+    it "should have a artist" do
+      event_scraper_service_object = EventScraperService.new
+      events = event_scraper_service_object.events
+      random_event_hash = events.sample
+      expect(random_event_hash.has_key?(:artist)).to be true
+    end
+
+    it "should have a city" do
+      event_scraper_service_object = EventScraperService.new
+      events = event_scraper_service_object.events
+      random_event_hash = events.sample
+      expect(random_event_hash.has_key?(:city)).to be true
+    end
+
+    it "should have a venue" do
+      event_scraper_service_object = EventScraperService.new
+      events = event_scraper_service_object.events
+      random_event_hash = events.sample
+      expect(random_event_hash.has_key?(:venue)).to be true
+    end
+
+    it "should have a date" do
+      event_scraper_service_object = EventScraperService.new
+      events = event_scraper_service_object.events
+      random_event_hash = events.sample
+      expect(random_event_hash.has_key?(:date)).to be true
+    end
+
+    it "should have a price" do
+      event_scraper_service_object = EventScraperService.new
+      events = event_scraper_service_object.events
+      random_event_hash = events.sample
+      expect(random_event_hash.has_key?(:price)).to be true
+    end
+
+    it "price data type should be integer" do
+      event_scraper_service_object = EventScraperService.new
+      events = event_scraper_service_object.events
+      random_event_hash = events.sample
+      expect(random_event_hash[:price].class).to be_instance_of Numeric
     end
   end
 end
